@@ -2,22 +2,19 @@ import {
   Card,
   CardBody,
   Image,
-  Stack,
+  Box,
   Heading,
   Button,
-  Box,
   Progress,
   Text,
   Spinner,
   Flex,
-  Container,
   useToast,
 } from "@chakra-ui/react";
 import { useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import Formats from "./Formats";
-import { title } from "process";
 
 const VideoDetails = ({ videoId }) => {
   const toast = useToast();
@@ -29,10 +26,8 @@ const VideoDetails = ({ videoId }) => {
   const [isAvailable, setIsAvailable] = useState(false);
   const [key, setKey] = useState("");
   const [url, setUrl] = useState("");
-  const abortController = useRef(new AbortController());
-  console.log(selectedFormat);
-
-  const socket = io("http://162.55.212.83:3002");
+  const [token, setToken] = useState("");
+  const socketRef = useRef(null);
 
   useEffect(() => {
     const fetchVideoData = async () => {
@@ -40,7 +35,7 @@ const VideoDetails = ({ videoId }) => {
         const response = await fetch(
           `http://162.55.212.83:3001/?videoId=${videoId}`
         );
-        if (response.status == 500) {
+        if (response.status === 500) {
           setIsAvailable(false);
           setVideoData(null);
           setLoading(false);
@@ -57,7 +52,6 @@ const VideoDetails = ({ videoId }) => {
         setIsAvailable(true);
         const videoData = await response.json();
         setVideoData(videoData);
-        console.log(videoData);
         setLoading(false);
       } catch (error) {
         if (error.name !== "AbortError") {
@@ -69,10 +63,11 @@ const VideoDetails = ({ videoId }) => {
     fetchVideoData();
 
     return () => {
-      abortController.current.abort();
-      socket.disconnect();
+      if (socketRef.current) {
+        socketRef.current.disconnect();
+      }
     };
-  }, [videoId]);
+  }, [videoId, toast]);
 
   useEffect(() => {
     setLoading(true);
@@ -80,9 +75,32 @@ const VideoDetails = ({ videoId }) => {
     setIsComplete(false);
   }, [videoId]);
 
-  socket.on("secretkey", (k) => {
-    setKey(k);
-  });
+  useEffect(() => {
+    socketRef.current = io("http://162.55.212.83:3002");
+
+    socketRef.current.on("secretkey", (k) => {
+      setKey(k);
+      console.log(key);
+    });
+
+    socketRef.current.on("progress", (data) => {
+      setProgress(data);
+    });
+
+    socketRef.current.on("finish", (tok) => {
+      const payload = jwt.verify(tok, key) as JwtPayload;
+      const token = extractJwtFromUrl(payload.url);
+      setToken(token);
+      setUrl(payload.url);
+      setIsComplete(true);
+    });
+
+    return () => {
+      if (socketRef.current) {
+        socketRef.current.disconnect();
+      }
+    };
+  }, [key]);
 
   const generateJWT = (videoId) => {
     if (!key) {
@@ -97,27 +115,14 @@ const VideoDetails = ({ videoId }) => {
     return token;
   };
 
+  function extractJwtFromUrl(url) {
+    const parts = url.split("/");
+    const token = parts[parts.length - 1];
+    return token;
+  }
+
   const handleConvert = async () => {
-    if (selectedFormat == "mp3") {
-      const token = generateJWT(videoId);
-      socket.emit("downloadMp3", token);
-      socket.on("progress", (data) => {
-        setProgress(data);
-      });
-      socket.on("finish", (token) => {
-        const payload = jwt.verify(token, "password") as JwtPayload;
-        setUrl(payload.url);
-        setIsComplete(true);
-      });
-    } else if (selectedFormat == "mp4") {
-      console.log("downloading mp4");
-      fetch(`http://162.55.212.83:3001/mp4?videoId=${videoId}`).then(() => {
-        setIsComplete(true);
-      });
-      socket.on("progress", (data) => {
-        setProgress(data);
-      });
-    } else {
+    if (!selectedFormat) {
       toast({
         title: "No Format Selected",
         description: "Please select a format before converting.",
@@ -126,44 +131,21 @@ const VideoDetails = ({ videoId }) => {
         isClosable: true,
         position: "top",
       });
+      return;
+    }
+
+    const token = generateJWT(videoId);
+    if (selectedFormat === "mp3") {
+      socketRef.current.emit("downloadMp3", token);
+    } else if (selectedFormat === "mp4") {
+      socketRef.current.emit("downloadMp4", token);
     }
   };
-
-  // const handleDownload = async () => {
-  //   if (url) {
-  //     try {
-  //       const downloadUrl = url;
-  //       const anchorElement = document.createElement("a");
-  //       anchorElement.href = downloadUrl;
-  //       document.body.appendChild(anchorElement);
-  //       anchorElement.click();
-  //       document.body.removeChild(anchorElement);
-  //     } catch (error) {
-  //       if (error.name !== "AbortError") {
-  //         console.error("Error downloading video:", error);
-  //       }
-  //     }
-  //   } else {
-  //     if (!videoBlob) {
-  //       console.error("No audio to save");
-  //       return;
-  //     }
-  //     const url = `http://162.55.212.83:3001/mp4?videoId=${videoId}`;
-  //     const link = document.createElement("a");
-  //     link.href = url;
-  //     link.setAttribute("download", "audio.mp3");
-  //     document.body.appendChild(link);
-  //     link.click();
-  //   }
-  // };
 
   const handleDownload = async () => {
     if (url) {
       try {
-        console.log(selectedFormat);
-        const downloadUrl = `http://162.55.212.83:3001/download/${generateJWT(
-          videoId
-        )}?format=${selectedFormat}`;
+        const downloadUrl = `http://162.55.212.83:3001/download/${token}?format=${selectedFormat}`;
         const anchorElement = document.createElement("a");
         anchorElement.href = downloadUrl;
         document.body.appendChild(anchorElement);
@@ -171,26 +153,6 @@ const VideoDetails = ({ videoId }) => {
         document.body.removeChild(anchorElement);
         setIsComplete(false);
         setProgress(null);
-      } catch (error) {
-        if (error.name !== "AbortError") {
-          console.error("Error downloading video:", error);
-          setIsComplete(false);
-          setProgress(null);
-        }
-      }
-    } else {
-      try {
-        console.log(selectedFormat);
-        let downloadUrl = `http://162.55.212.83:3001/download/${generateJWT(
-          videoId
-        )}?format=${selectedFormat}`;
-        const link = document.createElement("a");
-        link.href = downloadUrl;
-        link.setAttribute("download", `video.${selectedFormat}`);
-        document.body.appendChild(link);
-        link.click();
-        setIsComplete(false);
-        // setProgress(null);
       } catch (error) {
         if (error.name !== "AbortError") {
           console.error("Error downloading video:", error);
