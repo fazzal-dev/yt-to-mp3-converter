@@ -80,7 +80,6 @@ const VideoDetails = ({ videoId }) => {
 
     socketRef.current.on("secretkey", (k) => {
       setKey(k);
-      console.log(key);
     });
 
     socketRef.current.on("progress", (data) => {
@@ -183,19 +182,17 @@ const VideoDetails = ({ videoId }) => {
           direction={{ base: "column", sm: "row" }}
           variant="outline"
           mt={5}
-          w={{ base: "100%", md: "50%" }}
         >
-          <Box>
-            <Image
-              w={{ base: "100%", md: "auto" }}
-              h={{ base: "auto", md: "100%" }}
-              src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
-              alt="Video Thumbnail"
-            />
-          </Box>
+          <Image
+            w="auto"
+            src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
+            alt="Video Thumbnail"
+          />
 
-          <CardBody>
-            <Heading size="md">{data.title}</Heading>
+          <CardBody w={{ base: "80vw", md: "30vw" }}>
+            <Heading size="md" noOfLines={2} textOverflow="ellipsis">
+              {data.title}
+            </Heading>
             <Formats onSelect={setSelectedFormat} />
             <Flex mt={4}>
               <Button
