@@ -10,15 +10,16 @@ import {
   useColorModeValue,
   useTheme,
   useColorMode,
-  Spinner,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useVideoData from "../hooks/useVideoData";
 import VideoDetails from "./VideoDetails";
 import SearchResults from "./SearchResults";
 import { useToast } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 
-const Hero = ({ title }: { title: string }) => {
+const Hero = () => {
+  const { t } = useTranslation("hero");
   const theme = useTheme();
   const gradient = useColorModeValue(
     theme.semanticTokens.gradients.light,
@@ -27,7 +28,6 @@ const Hero = ({ title }: { title: string }) => {
   const toast = useToast();
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
-  const { videoData, loading, error: err, fetchVideoData } = useVideoData();
   const [videoId, setVideoId] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [showSearchResults, setShowSearchResults] = useState<boolean>(false);
@@ -64,8 +64,8 @@ const Hero = ({ title }: { title: string }) => {
       const url = new URL(searchQuery);
       if (!url.protocol.startsWith("http")) {
         toast({
-          title: "Invalid URL",
-          description: "Please enter a valid YouTube URL",
+          title: `${t("invalid_url_title")}`,
+          description: `${t("invalid_url_description")}`,
           status: "error",
           duration: 2000,
           isClosable: true,
@@ -80,8 +80,8 @@ const Hero = ({ title }: { title: string }) => {
         setShowSearchResults(false);
       } else {
         toast({
-          title: "Invalid YouTube URL",
-          description: "Please enter a valid YouTube URL",
+          title: `${t("invalid_url_title")}`,
+          description: `${t("invalid_url_description")}`,
           status: "error",
           duration: 2000,
           isClosable: true,
@@ -115,7 +115,9 @@ const Hero = ({ title }: { title: string }) => {
             textAlign="center"
             px={{ base: 5, md: 0 }}
           >
-            <Heading fontSize={{ base: "7vw", md: "4vw" }}>{title}</Heading>
+            <Heading fontSize={{ base: "7vw", md: "4vw" }}>
+              {t("title")}
+            </Heading>
           </Flex>
           <Text
             pt={5}
@@ -124,8 +126,7 @@ const Hero = ({ title }: { title: string }) => {
             textAlign="center"
             px={{ base: 5, md: 0 }}
           >
-            Download your favorite youtube video in mp3 and mp4 in high quality
-            for free
+            {t("sub_heading")}
           </Text>
           <Box pt={10}>
             <Flex
@@ -135,7 +136,7 @@ const Hero = ({ title }: { title: string }) => {
             >
               <InputGroup>
                 <Input
-                  placeholder="Search or Paste Valid Youtube URL here"
+                  placeholder={t("place_holder")}
                   size="lg"
                   bg={isDark ? "gray.800" : "white"}
                   focusBorderColor={isDark ? "blue.300" : "red.500"}
@@ -162,7 +163,9 @@ const Hero = ({ title }: { title: string }) => {
                     size="md"
                     onClick={handleSearch}
                   >
-                    {searchQuery.startsWith("http") ? "Convert" : "Search"}
+                    {searchQuery.startsWith("http")
+                      ? `${t("convert")}`
+                      : `${t("search")}`}
                   </Button>
                 </InputRightElement>
               </InputGroup>
@@ -174,7 +177,9 @@ const Hero = ({ title }: { title: string }) => {
                 display={{ base: "flex", md: "none" }}
                 onClick={handleSearch}
               >
-                {searchQuery.startsWith("http") ? "Convert" : "Search"}
+                {searchQuery.startsWith("http")
+                  ? `${t("convert")}`
+                  : `${t("search")}`}
               </Button>
             </Flex>
           </Box>
@@ -188,10 +193,6 @@ const Hero = ({ title }: { title: string }) => {
       ) : null}
     </>
   );
-};
-
-Hero.defaultProps = {
-  title: "Youtube Downloader & Converter",
 };
 
 export default Hero;

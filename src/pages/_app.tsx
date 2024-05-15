@@ -1,12 +1,11 @@
-import {
-  ChakraProvider,
-  useColorModeValue,
-  ColorModeProvider,
-} from "@chakra-ui/react";
+import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
 import theme from "../theme";
 import { AppProps } from "next/app";
+import { appWithTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <ChakraProvider theme={theme}>
       <ColorModeProvider
@@ -21,4 +20,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

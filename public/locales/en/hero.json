@@ -1,0 +1,9 @@
+{
+  "title": "Youtube Downloader & Converter",
+  "sub_heading": "Download your favorite youtube video in mp3 and mp4 in high quality for free",
+  "place_holder": "Search or Paste Valid Youtube URL here",
+  "convert": "Convert",
+  "search": "Search",
+  "invalid_url_title": "Invalid URL",
+  "invalid_url_description": "Please enter a valid YouTube URL"
+}

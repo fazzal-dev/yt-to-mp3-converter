@@ -5,7 +5,9 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <title>ytmp3</title>
+        </Head>
         <body>
           <ColorModeScript />
           <Main />
