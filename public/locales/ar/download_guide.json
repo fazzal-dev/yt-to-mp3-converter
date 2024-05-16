@@ -3,16 +3,16 @@
     "header": "كيفية تنزيل مقاطع فيديو يوتيوب؟",
     "steps": [
       {
-        "title": "Copy the URL",
-        "description": "To get started, access either the Instagram app or website and retrieve the link to the specific video, reels, carousel, or IGTV content that you want to copy."
+        "title": "انسخ عنوان URL",
+        "description": "للبدء، قم بالوصول إلى تطبيق Instagram أو موقع الويب واحصل على الرابط الخاص بالفيديو أو البكرات أو الرف الدائري أو محتوى IGTV المحدد الذي تريد نسخه."
       },
       {
-        "title": "Paste the link",
-        "description": "Return to the Igram website, paste the link into the input field at the top of the screen and click the 'Download' button."
+        "title": "الصق الرابط",
+        "description": "ارجع إلى موقع Igram، والصق الرابط في حقل الإدخال أعلى الشاشة وانقر فوق الزر تنزيل"
       },
       {
-        "title": "Download",
-        "description": "In no time at all, you'll receive a list of results that offer various quality options. Choose the option that best suits your requirements and download it."
+        "title": "تحميل",
+        "description": "وفي وقت قصير جدًا، ستتلقى قائمة بالنتائج التي تقدم خيارات جودة متنوعة. اختر الخيار الذي يناسب متطلباتك وقم بتنزيله."
       }
     ]
   }

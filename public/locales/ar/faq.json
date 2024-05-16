@@ -2,24 +2,24 @@
   "faq": {
     "faqs": [
       {
-        "question": "Is it legal to convert YouTube videos to MP3?",
-        "answer": "It is generally legal to convert YouTube videos to MP3 for personal use. However, distributing the MP3 files or using them for commercial purposes may violate copyright laws."
+        "question": "هل من القانوني تحويل مقاطع فيديو YouTube إلى MP3؟",
+        "answer": "يعد تحويل مقاطع فيديو YouTube إلى MP3 للاستخدام الشخصي أمرًا قانونيًا بشكل عام. ومع ذلك، فإن توزيع ملفات MP3 أو استخدامها لأغراض تجارية قد ينتهك قوانين حقوق النشر."
       },
       {
-        "question": "Do I need to install any software to convert YouTube videos to MP3?",
-        "answer": "No, there are many online tools available that allow you to convert YouTube videos to MP3 without the need for any software installation."
+        "question": "هل أحتاج إلى تثبيت أي برنامج لتحويل مقاطع فيديو YouTube إلى MP3؟",
+        "answer": "لا، هناك العديد من الأدوات المتاحة عبر الإنترنت التي تسمح لك بتحويل مقاطع فيديو YouTube إلى MP3 دون الحاجة إلى تثبيت أي برنامج."
       },
       {
-        "question": "Can I convert YouTube videos to MP3 on my mobile phone?",
-        "answer": "Yes, there are several apps available for both Android and iOS that allow you to convert YouTube videos to MP3 directly on your mobile device."
+        "question": "هل يمكنني تحويل مقاطع فيديو YouTube إلى MP3 على هاتفي المحمول؟",
+        "answer": "نعم، هناك العديد من التطبيقات المتاحة لكل من Android وiOS والتي تتيح لك تحويل مقاطع فيديو YouTube إلى MP3 مباشرة على جهازك المحمول."
       },
       {
-        "question": "Are there any limitations on the length of the YouTube video I can convert to MP3?",
-        "answer": "The length of the YouTube video you can convert to MP3 may vary depending on the tool or service you are using. Some tools may have limitations on the length of the video that can be converted."
+        "question": "هل هناك أي قيود على طول مقطع فيديو YouTube الذي يمكنني تحويله إلى MP3؟",
+        "answer": "قد يختلف طول مقطع فيديو YouTube الذي يمكنك تحويله إلى MP3 وفقًا للأداة أو الخدمة التي تستخدمها. قد يكون لبعض الأدوات قيود على طول الفيديو الذي يمكن تحويله."
       },
       {
-        "question": "Can I convert YouTube videos to MP3 in high quality?",
-        "answer": "Yes, many YouTube to MP3 converters offer options to convert videos in high quality, such as 320kbps, which is considered near CD quality."
+        "question": "هل يمكنني تحويل مقاطع فيديو YouTube إلى MP3 بجودة عالية؟",
+        "answer": "نعم، توفر العديد من محولات YouTube إلى MP3 خيارات لتحويل مقاطع الفيديو بجودة عالية، مثل 320 كيلوبت في الثانية، والتي تعتبر قريبة من جودة القرص المضغوط."
       }
     ],
     "header": "أسئلة وأجوبة (FAQ)",

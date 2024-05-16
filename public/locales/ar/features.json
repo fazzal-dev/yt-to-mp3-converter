@@ -2,28 +2,28 @@
   "feature": {
     "features": [
       {
-        "title": "Fast Conversion",
-        "description": "Instantly convert YouTube videos to MP3 format without any delay, allowing users to download their favorite music quickly and efficiently."
+        "title": "تحويل سريع",
+        "description": "قم بتحويل مقاطع فيديو YouTube على الفور إلى تنسيق MP3 دون أي تأخير، مما يسمح للمستخدمين بتنزيل الموسيقى المفضلة لديهم بسرعة وكفاءة."
       },
       {
-        "title": "High-Quality Audio",
-        "description": " Ensure that the converted MP3 files retain the original audio quality of the YouTube videos, providing users with a premium listening experience."
+        "title": "صوت عالي الجودة",
+        "description": "تأكد من أن ملفات MP3 المحولة تحتفظ بجودة الصوت الأصلية لمقاطع فيديو YouTube، مما يوفر للمستخدمين تجربة استماع متميزة."
       },
       {
-        "title": "Bulk Conversion",
-        "description": " Enable users to convert multiple YouTube videos to MP3 at once, saving time and effort for those looking to download entire playlists or albums."
+        "title": "التحويل بالجملة",
+        "description": "تمكين المستخدمين من تحويل مقاطع فيديو YouTube متعددة إلى MP3 مرة واحدة، مما يوفر الوقت والجهد لأولئك الذين يتطلعون إلى تنزيل قوائم تشغيل أو ألبومات كاملة."
       },
       {
-        "title": "Customizable Bitrate",
-        "description": "Offer users the option to select the bitrate of the converted MP3 files, allowing them to choose between smaller file sizes for convenience or higher quality for better audio."
+        "title": "معدل البت للتخصيص",
+        "description": "يقدم للمستخدمين خيار تحديد معدل البت لملفات MP3 المحولة، مما يسمح لهم بالاختيار بين أحجام الملفات الأصغر للراحة أو الجودة الأعلى للحصول على صوت أفضل."
       },
       {
-        "title": "Cross-Platform Compatibility",
-        "description": " Provide a web-based converter that works seamlessly on all devices and platforms, including desktops, laptops, tablets, and smartphones."
+        "title": "التوافق عبر الأنظمة الأساسية",
+        "description": " قم بتوفير محول قائم على الويب يعمل بسلاسة على جميع الأجهزة والأنظمة الأساسية، بما في ذلك أجهزة الكمبيوتر المكتبية وأجهزة الكمبيوتر المحمولة والأجهزة اللوحية والهواتف الذكية."
       },
       {
-        "title": "User-Friendly Interface",
-        "description": "Design an intuitive and easy-to-use interface that guides users paste-url process step-by-step, ensuring a smooth and hassle-free experience."
+        "title": "واجهة سهلة الاستخدام",
+        "description": "صمم واجهة بديهية وسهلة الاستخدام ترشد المستخدمين إلى عملية لصق عنوان URL خطوة بخطوة، مما يضمن تجربة سلسة وخالية من المتاعب."
       }
     ],
     "header": "notube.mobi ميزات تنزيل الفيديو من اليوتيوب"
