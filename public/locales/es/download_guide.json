@@ -1,0 +1,19 @@
+{
+  "downloadGuide": {
+    "header": "¿Cómo descargar vídeos de Youtube?",
+    "steps": [
+      {
+        "title": "Copia la URL",
+        "description": "Para comenzar, accede a la aplicación o al sitio web de Instagram y recupera el enlace al video, carrete, carrusel o contenido de IGTV específico que deseas copiar. "
+      },
+      {
+        "title": "Pegue el enlace",
+        "description": "Regrese al sitio web de Igram, pegue el enlace en el campo de entrada en la parte superior de la pantalla y haga clic en el botón 'Descargar'."
+      },
+      {
+        "title": "Descargar",
+        "description": "En poco tiempo recibirás una lista de resultados que ofrecen varias opciones de calidad. Elige la opción que mejor se adapte a tus necesidades y descárgala."
+      }
+    ]
+  }
+}

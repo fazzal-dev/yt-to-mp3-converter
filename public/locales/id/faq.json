@@ -1,0 +1,28 @@
+{
+  "faq": {
+    "faqs": [
+      {
+        "question": "Apakah legal untuk mengonversi video YouTube ke MP3?",
+        "answer": "Mengonversi video YouTube ke MP3 untuk penggunaan pribadi secara umum sah. Namun, mendistribusikan file MP3 atau menggunakannya untuk tujuan komersial mungkin melanggar undang-undang hak cipta."
+      },
+      {
+        "question": "Apakah saya perlu memasang perangkat lunak apa pun untuk mengonversi video YouTube ke MP3?",
+        "answer": "Tidak, ada banyak alat daring yang memungkinkan Anda mengonversi video YouTube ke MP3 tanpa memerlukan instalasi perangkat lunak apa pun."
+      },
+      {
+        "question": "Dapatkah saya mengonversi video YouTube ke MP3 di ponsel saya?",
+        "answer": "Ya, ada beberapa aplikasi yang tersedia untuk Android dan iOS yang memungkinkan Anda mengonversi video YouTube ke MP3 langsung di perangkat seluler Anda."
+      },
+      {
+        "question": "Apakah ada batasan durasi video YouTube yang dapat saya konversi ke MP3?",
+        "answer": "Panjangnya jumlah video YouTube yang dapat Anda konversi ke MP3 mungkin berbeda-beda, bergantung pada alat atau layanan yang Anda gunakan. Beberapa alat mungkin memiliki batasan durasi video yang dapat dikonversi."
+      },
+      {
+        "question": "Dapatkah saya mengonversi YouTube video ke MP3 dalam kualitas tinggi?",
+        "answer": "Ya, banyak konverter YouTube ke MP3 menawarkan opsi untuk mengonversi video dalam kualitas tinggi, seperti 320kbps, yang dianggap mendekati kualitas CD."
+      }
+    ],
+    "header": "Pertanyaan yang sering diajukan (FAQ)",
+    "sub_heading": "FAQ ini memberikan informasi tentang pertanyaan atau kekhawatiran yang sering muncul tentang YtMp3. jika Anda tidak dapat menemukan jawaban atas pertanyaan Anda, silakan bertanya melalui email di halaman kontak kami."
+  }
+}

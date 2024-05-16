@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Flex, Box, Text, useColorMode, Button } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
-import Languages from "./Languages";
+import Languages from "./LanguageSwitcher";
 import { useTranslation } from "next-i18next";
 const sections = [
   { id: "Youtube Downloader", link: "#" },

@@ -69,7 +69,6 @@ const Features = () => {
   const features = t("feature.features", {
     returnObjects: true,
   }) as FeatureTypes[];
-  console.log(features);
   return (
     <Flex direction="column" justifyContent="center" alignItems="center">
       <Text

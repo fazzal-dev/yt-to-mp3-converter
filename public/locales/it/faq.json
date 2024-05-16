@@ -1,0 +1,28 @@
+{
+  "faq": {
+    "faqs": [
+      {
+        "question": "È legale convertire i video di YouTube in MP3?",
+        "answer": "In genere è legale convertire i video di YouTube in MP3 per uso personale. Tuttavia, distribuire i file MP3 o utilizzarli per scopi commerciali potrebbe violare le leggi sul copyright."
+      },
+      {
+        "question": "Devo installare qualche software per convertire i video di YouTube in MP3?",
+        "answer": "No, sono disponibili molti strumenti online che ti consentono di convertire i video di YouTube in MP3 senza la necessità di installare alcun software."
+      },
+      {
+        "question": "Posso convertire i video di YouTube in MP3 sul mio cellulare?",
+        "answer": "Sì, sono disponibili diverse app sia per Android che per iOS che ti consentono di convertire i video di YouTube in MP3 direttamente sul tuo dispositivo mobile."
+      },
+      {
+        "question": "Ci sono limitazioni sulla lunghezza del video di YouTube che posso convertire in MP3?",
+        "answer": "La lunghezza del video YouTube che puoi convertire in MP3 può variare a seconda dello strumento o del servizio che stai utilizzando. Alcuni strumenti potrebbero avere limitazioni sulla lunghezza del video che può essere convertito."
+      },
+      {
+        "question": "Posso convertire YouTube video in MP3 in alta qualità?",
+        "answer": "Sì, molti convertitori da YouTube a MP3 offrono opzioni per convertire video in alta qualità, ad esempio 320 kbps, che è considerato vicino alla qualità del CD."
+      }
+    ],
+    "header": "Domande frequenti (FAQ)",
+    "sub_heading": "Queste FAQ forniscono informazioni su domande frequenti o dubbi su YtMp3. se non riesci a trovare la risposta alla tua domanda, non esitare a chiedere tramite e-mail nella nostra pagina dei contatti."
+  }
+}

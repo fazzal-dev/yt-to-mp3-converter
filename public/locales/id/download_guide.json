@@ -1,0 +1,19 @@
+{
+  "downloadGuide": {
+    "header": "Bagaimana Cara Mengunduh Video Youtube?",
+    "steps": [
+      {
+        "title": "Salin URL",
+        "description": "Untuk memulai, akses aplikasi atau situs web Instagram dan ambil tautan ke konten video, reel, carousel, atau IGTV tertentu yang ingin Anda salin. "
+      },
+      {
+        "title": "Tempel tautan",
+        "description": "Kembali ke situs web Igram, tempel tautan ke kolom masukan di bagian atas layar dan klik tombol 'Unduh'."
+      },
+      {
+        "title": "Download",
+        "description": "Dalam waktu singkat, Anda akan menerima daftar hasil yang menawarkan berbagai opsi kualitas. Pilih opsi yang paling sesuai dengan kebutuhan Anda dan unduh."
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "convert": "Konwertować",
+    "invalid_url_description": "Wprowadź prawidłowy adres URL YouTube",
+    "invalid_url_title": "nieprawidłowy URL",
+    "place_holder": "Wyszukaj lub wklej tutaj prawidłowy adres URL YouTube",
+    "search": "Szukaj",
+    "sub_heading": "Pobierz za darmo swój ulubiony film z YouTube'a w formacie mp3 i mp4 w wysokiej jakości",
+    "title": "Narzędzie do pobierania i konwertowania YouTube"
+  }
+}

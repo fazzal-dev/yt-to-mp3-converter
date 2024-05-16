@@ -1,0 +1,31 @@
+{
+  "feature": {
+    "features": [
+      {
+        "title": "Fast Conversion",
+        "description": "Instantly convert YouTube videos to MP3 format without any delay, allowing users to download their favorite music quickly and efficiently."
+      },
+      {
+        "title": "High-Quality Audio",
+        "description": " Ensure that the converted MP3 files retain the original audio quality of the YouTube videos, providing users with a premium listening experience."
+      },
+      {
+        "title": "Bulk Conversion",
+        "description": " Enable users to convert multiple YouTube videos to MP3 at once, saving time and effort for those looking to download entire playlists or albums."
+      },
+      {
+        "title": "Customizable Bitrate",
+        "description": "Offer users the option to select the bitrate of the converted MP3 files, allowing them to choose between smaller file sizes for convenience or higher quality for better audio."
+      },
+      {
+        "title": "Cross-Platform Compatibility",
+        "description": " Provide a web-based converter that works seamlessly on all devices and platforms, including desktops, laptops, tablets, and smartphones."
+      },
+      {
+        "title": "User-Friendly Interface",
+        "description": "Design an intuitive and easy-to-use interface that guides users paste-url process step-by-step, ensuring a smooth and hassle-free experience."
+      }
+    ],
+    "header": "notube.mobi ميزات تنزيل الفيديو من اليوتيوب"
+  }
+}

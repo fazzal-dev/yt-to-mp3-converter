@@ -1,0 +1,31 @@
+{
+  "feature": {
+    "features": [
+      {
+        "title": "Szybka konwersja",
+        "description": "Natychmiastowo konwertuj filmy YouTube do formatu MP3, bez żadnych opóźnień, umożliwiając użytkownikom szybkie i wydajne pobieranie ulubionej muzyki."
+      },
+      {
+        "title": "Wysoka jakość Audio",
+        "description": " Upewnij się, że przekonwertowane pliki MP3 zachowują oryginalną jakość dźwięku filmów YouTube, zapewniając użytkownikom najwyższej jakości wrażenia słuchowe."
+      },
+      {
+        "title": "Konwersja zbiorcza",
+        "opis": " Pozwól użytkownikom konwertować wiele filmów z YouTube'a na MP3 jednocześnie, oszczędzając czas i wysiłek tym, którzy chcą pobrać całe playlisty lub albumy."
+      },
+      {
+        "title": "Konfigurowalna szybkość transmisji",
+        "description": "Zaoferuj użytkownikom opcję wyboru szybkość transmisji konwertowanych plików MP3, umożliwiając wybór pomiędzy mniejszymi rozmiarami plików dla wygody lub wyższą jakością zapewniającą lepszy dźwięk."
+      },
+      {
+        "title": "Kompatybilność między platformami",
+        "description": " Udostępnij przeglądarkę internetową konwerter, który działa płynnie na wszystkich urządzeniach i platformach, w tym komputerach stacjonarnych, laptopach, tabletach i smartfonach."
+      },
+      {
+        "title": "Przyjazny dla użytkownika interfejs",
+        "description": "Zaprojektuj intuicyjny i łatwy w obsłudze interfejs który prowadzi użytkowników krok po kroku przez proces wklejania adresu URL, zapewniając płynną i bezproblemową obsługę."
+      }
+    ],
+    "header": "notube.mobi Funkcje narzędzia do pobierania filmów z YouTube"
+  }
+}

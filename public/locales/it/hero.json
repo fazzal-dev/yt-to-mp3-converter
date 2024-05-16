@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "convert": "Convertire",
+    "invalid_url_description": "Inserisci un URL YouTube valido",
+    "invalid_url_title": "URL non valido",
+    "place_holder": "Cerca o incolla qui l'URL YouTube valido",
+    "search": "Ricerca",
+    "sub_heading": "Scarica gratuitamente i tuoi video YouTube preferiti in mp3 e mp4 in alta qualità",
+    "title": "Downloader e convertitore di Youtube"
+  }
+}

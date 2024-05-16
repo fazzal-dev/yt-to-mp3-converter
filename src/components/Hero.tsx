@@ -126,7 +126,7 @@ const Hero = () => {
             textAlign="center"
             px={{ base: 5, md: 0 }}
           >
-            <Heading fontSize={{ base: "7vw", md: "4vw" }}>
+            <Heading fontSize={{ base: "7vw", md: "3vw" }}>
               {hero.title}
             </Heading>
           </Flex>

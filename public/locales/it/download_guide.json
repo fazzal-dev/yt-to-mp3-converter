@@ -1,0 +1,19 @@
+{
+  "downloadGuide": {
+    "header": "Come scaricare i video di Youtube?",
+    "steps": [
+      {
+        "title": "Copia l'URL",
+        "description": "Per iniziare, accedi all'app o al sito web di Instagram e recupera il collegamento al video, ai reel, al carosello o al contenuto IGTV specifico che desideri copiare. "
+      },
+      {
+        "title": "Incolla il collegamento",
+        "description": "Torna al sito web di Igram, incolla il collegamento nel campo di immissione nella parte superiore dello schermo e fai clic sul pulsante 'Scarica'."
+      },
+      {
+        "title": "Scarica",
+        "description": "In un batter d'occhio riceverai un elenco di risultati che offrono varie opzioni di qualità. Scegli l'opzione che meglio si adatta alle tue esigenze e scaricala."
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "downloadGuide": {
+    "header": "Jak pobierać filmy z YouTube'a?",
+    "steps": [
+      {
+        "title": "Skopiuj adres URL",
+        "description": "Aby rozpocząć, przejdź do aplikacji lub witryny Instagram i pobierz link do konkretnego filmu, rolek, karuzeli lub treści IGTV, które chcesz skopiować. "
+      },
+      {
+        "title": "Wklej link",
+        "description": "Wróć do witryny Igram, wklej link w polu wejściowym u góry ekranu i kliknij przycisk 'Pobierz'."
+      },
+      {
+        "title": "Pobierz",
+        "description": "W mgnieniu oka otrzymasz listę wyników oferujących różne opcje jakości. Wybierz opcję, która najlepiej odpowiada Twoim wymaganiom i pobierz ją."
+      }
+    ]
+  }
+}

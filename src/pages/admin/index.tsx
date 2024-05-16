@@ -1,6 +1,6 @@
 // src/pages/admin/index.tsx
 import AdminLayout from "../../components/AdminLayout";
-import Languages from "../../components/Languages";
+import Languages from "../../components/LanguageSwitcher";
 import withAuth from "../../components/WithAuth";
 import { Heading } from "@chakra-ui/react";
 

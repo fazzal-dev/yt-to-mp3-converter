@@ -1,0 +1,31 @@
+{
+  "feature": {
+    "features": [
+      {
+        "title": "Konversi Cepat",
+        "description": "Konversi video YouTube ke format MP3 secara instan tanpa penundaan, memungkinkan pengguna mengunduh musik favorit mereka dengan cepat dan efisien."
+      },
+      {
+        "title": "Kualitas Tinggi Audio",
+        "description": " Pastikan file MP3 yang dikonversi mempertahankan kualitas audio asli video YouTube, sehingga memberikan pengalaman mendengarkan premium kepada pengguna."
+      },
+      {
+        "title": "Konversi Massal",
+        "description": " Memungkinkan pengguna mengonversi beberapa video YouTube ke MP3 sekaligus, menghemat waktu dan tenaga bagi mereka yang ingin mengunduh seluruh daftar putar atau album."
+      },
+      {
+        "title": "Bitrate yang Dapat Disesuaikan",
+        "description": "Tawarkan opsi kepada pengguna untuk memilih bitrate file MP3 yang dikonversi, memungkinkan mereka memilih antara ukuran file yang lebih kecil untuk kenyamanan atau kualitas yang lebih tinggi untuk audio yang lebih baik."
+      },
+      {
+        "title": "Kompatibilitas Lintas Platform",
+        "description": " Menyediakan berbasis web konverter yang bekerja dengan lancar di semua perangkat dan platform, termasuk desktop, laptop, tablet, dan ponsel cerdas."
+      },
+      {
+        "title": "Antarmuka Ramah Pengguna",
+        "description": "Rancangan antarmuka yang intuitif dan mudah digunakan yang memandu proses menempelkan url kepada pengguna langkah demi langkah, memastikan pengalaman yang lancar dan bebas kerumitan."
+      }
+    ],
+    "header": "Fitur Pengunduh Video Youtube notube.mobi"
+  }
+}

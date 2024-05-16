@@ -1,0 +1,31 @@
+{
+  "feature": {
+    "features": [
+      {
+        "title": "Schnelle Konvertierung",
+        "description": "Konvertieren Sie YouTube-Videos sofort und ohne Verzögerung in das MP3-Format, sodass Benutzer ihre Lieblingsmusik schnell und effizient herunterladen können."
+      },
+      {
+        "title": "Hochwertige Audioqualität",
+        "description": "Stellen Sie sicher, dass die konvertierten MP3-Dateien die ursprüngliche Audioqualität der YouTube-Videos beibehalten, und bieten Sie Benutzern ein erstklassiges Hörerlebnis."
+      },
+      {
+        "title": "Massenkonvertierung",
+        "description": "Ermöglichen Sie Benutzern, mehrere YouTube-Videos gleichzeitig in MP3 zu konvertieren. Dies spart Zeit und Aufwand für diejenigen, die ganze Wiedergabelisten oder Alben herunterladen möchten."
+      },
+      {
+        "title": "Anpassbare Bitrate",
+        "description": "Bieten Sie Benutzern die Möglichkeit, die Bitrate der konvertierten MP3-Dateien auszuwählen. So können sie zwischen kleineren Dateigrößen für mehr Komfort oder höherer Qualität für besseren Ton wählen."
+      },
+      {
+        "title": "Plattformübergreifende Kompatibilität",
+        "description": "Stellen Sie einen webbasierten Konverter bereit, der nahtlos auf allen Geräten und Plattformen funktioniert, einschließlich Desktops, Laptops, Tablets und Smartphones."
+      },
+      {
+        "title": "Benutzerfreundliche Oberfläche",
+        "description": "Entwerfen Sie eine intuitive und benutzerfreundliche Oberfläche, die Benutzer durch den URL-Einfügen-Prozess führt Schritt für Schritt, um ein reibungsloses und problemloses Erlebnis zu gewährleisten."
+      }
+    ],
+    "header": "Funktionen des Youtube-Video-Downloaders notube.mobi"
+  }
+}
