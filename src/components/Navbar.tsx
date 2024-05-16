@@ -3,7 +3,6 @@ import { Flex, Box, Text, useColorMode, Button } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import Languages from "./Languages";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 const sections = [
   { id: "Youtube Downloader", link: "#" },
   { id: "Youtube to MP3", link: "#" },
@@ -48,7 +47,7 @@ const Navbar = () => {
             }}
             mr={4}
           >
-            {t(section.id)}
+            {section.id}
           </Button>
         ))}
       </Box>

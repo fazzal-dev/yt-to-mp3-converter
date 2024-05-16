@@ -8,26 +8,39 @@ import {
   useTheme,
 } from "@chakra-ui/react";
 import VerticalLine from "./VerticalLine";
+import { useTranslation } from "next-i18next";
 
-const steps = [
+interface Step {
+  title: string;
+  description: string;
+}
+
+// const steps = [
+//   {
+//     title: "Copy the URL",
+//     image: "images/copy-url.png",
+//     description:
+//       "To get started, access either the Instagram app or website and retrieve the link to the specific video, reels, carousel, or IGTV content that you want to copy.",
+//   },
+//   {
+//     title: "Paste the link",
+//     image: "images/paste-url.png",
+//     description:
+//       "Return to the Igram website, paste the link into the input field at the top of the screen and click the “Download” button.",
+//   },
+//   {
+//     title: "Download",
+//     image: "images/click-download.png",
+//     description:
+//       "In no time at all, you'll receive a list of results that offer various quality options. Choose the option that best suits your requirements and download it.",
+//   },
+// ];
+const imagePaths = [
+  { image: "images/copy-url.png" },
   {
-    title: "Copy the URL",
-    image: "images/copy-url.png",
-    description:
-      "To get started, access either the Instagram app or website and retrieve the link to the specific video, reels, carousel, or IGTV content that you want to copy.",
-  },
-  {
-    title: "Paste the link",
     image: "images/paste-url.png",
-    description:
-      "Return to the Igram website, paste the link into the input field at the top of the screen and click the “Download” button.",
   },
-  {
-    title: "Download",
-    image: "images/click-download.png",
-    description:
-      "In no time at all, you'll receive a list of results that offer various quality options. Choose the option that best suits your requirements and download it.",
-  },
+  { image: "images/click-download.png" },
 ];
 
 const DownloadGuide = () => {
@@ -36,6 +49,8 @@ const DownloadGuide = () => {
     theme.semanticTokens.gradients.light,
     theme.semanticTokens.gradients.dark
   );
+  const { t } = useTranslation("download_guide");
+  const steps = t("downloadGuide.steps", { returnObjects: true }) as Step[];
   return (
     <Flex alignItems="center" direction="column">
       <Text
@@ -45,7 +60,7 @@ const DownloadGuide = () => {
         mt={14}
         pb={7}
       >
-        How to Download Youtube Videos?
+        {t("downloadGuide.header")}
       </Text>
       <VStack spacing={8} width="100%" maxWidth="800px">
         {steps.map((step, index) => (
@@ -107,7 +122,11 @@ const DownloadGuide = () => {
               flex="1"
               w={{ base: "50vw", md: "30vw" }}
             >
-              <Image src={step.image} alt={`Step ${index + 1}`} w="320px" />
+              <Image
+                src={imagePaths[index].image}
+                alt={`Step ${index + 1}`}
+                w="320px"
+              />
             </Box>
           </Flex>
         ))}

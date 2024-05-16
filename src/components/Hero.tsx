@@ -12,14 +12,25 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import useVideoData from "../hooks/useVideoData";
 import VideoDetails from "./VideoDetails";
 import SearchResults from "./SearchResults";
 import { useToast } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 
+interface HeroTypes {
+  title: string;
+  sub_heading: string;
+  place_holder: string;
+  convert: string;
+  search: string;
+  invalid_url_title: string;
+  invalid_url_description: string;
+}
+
 const Hero = () => {
   const { t } = useTranslation("hero");
+  const hero = t("hero", { returnObjects: true }) as HeroTypes;
+
   const theme = useTheme();
   const gradient = useColorModeValue(
     theme.semanticTokens.gradients.light,
@@ -64,8 +75,8 @@ const Hero = () => {
       const url = new URL(searchQuery);
       if (!url.protocol.startsWith("http")) {
         toast({
-          title: `${t("invalid_url_title")}`,
-          description: `${t("invalid_url_description")}`,
+          title: `${hero.invalid_url_title}`,
+          description: `${hero.invalid_url_description}`,
           status: "error",
           duration: 2000,
           isClosable: true,
@@ -80,8 +91,8 @@ const Hero = () => {
         setShowSearchResults(false);
       } else {
         toast({
-          title: `${t("invalid_url_title")}`,
-          description: `${t("invalid_url_description")}`,
+          title: `${hero.invalid_url_title}`,
+          description: `${hero.invalid_url_description}`,
           status: "error",
           duration: 2000,
           isClosable: true,
@@ -116,7 +127,7 @@ const Hero = () => {
             px={{ base: 5, md: 0 }}
           >
             <Heading fontSize={{ base: "7vw", md: "4vw" }}>
-              {t("title")}
+              {hero.title}
             </Heading>
           </Flex>
           <Text
@@ -126,7 +137,7 @@ const Hero = () => {
             textAlign="center"
             px={{ base: 5, md: 0 }}
           >
-            {t("sub_heading")}
+            {hero.sub_heading}
           </Text>
           <Box pt={10}>
             <Flex
@@ -136,19 +147,19 @@ const Hero = () => {
             >
               <InputGroup>
                 <Input
-                  placeholder={t("place_holder")}
+                  placeholder={hero.place_holder}
                   size="lg"
                   bg={isDark ? "gray.800" : "white"}
                   focusBorderColor={isDark ? "blue.300" : "red.500"}
                   fontSize={{ base: "xs", md: "md" }}
-                  width={{ base: "90vw", md: "30rem" }}
+                  width={{ base: "90vw", md: "39rem" }}
                   _placeholder={{ opacity: 1, color: "gray.500" }}
                   onChange={handleInputChange}
                   value={searchQuery}
                 />
                 <InputRightElement
                   display={{ base: "none", md: "flex" }}
-                  width="4.6rem"
+                  width="fit-content"
                   h="100%"
                   justifyContent="center"
                   alignItems="center"
@@ -164,8 +175,8 @@ const Hero = () => {
                     onClick={handleSearch}
                   >
                     {searchQuery.startsWith("http")
-                      ? `${t("convert")}`
-                      : `${t("search")}`}
+                      ? `${hero.convert}`
+                      : `${hero.search}`}
                   </Button>
                 </InputRightElement>
               </InputGroup>
@@ -178,8 +189,8 @@ const Hero = () => {
                 onClick={handleSearch}
               >
                 {searchQuery.startsWith("http")
-                  ? `${t("convert")}`
-                  : `${t("search")}`}
+                  ? `${hero.convert}`
+                  : `${hero.search}`}
               </Button>
             </Flex>
           </Box>

@@ -1,0 +1,19 @@
+{
+  "downloadGuide": {
+    "header": "Comment télécharger des vidéos YouTube ?",
+    "steps": [
+      {
+        "title": "Copier l'URL",
+        "description": "Trouvez la vidéo YouTube que vous souhaitez télécharger et copiez l'URL de la barre d'adresse de votre navigateur."
+      },
+      {
+        "title": "Coller le lien",
+        "description": "Utilisez un site Web de téléchargement de vidéos YouTube. Collez l'URL copiée dans le champ prévu à cet effet sur le site Web et cliquez sur 'Télécharger'."
+      },
+      {
+        "title": "Télécharger",
+        "description": "Choisissez la qualité vidéo souhaitée parmi les options disponibles et téléchargez la vidéo."
+      }
+    ]
+  }
+}
