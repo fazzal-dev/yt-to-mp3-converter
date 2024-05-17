@@ -65,7 +65,7 @@ const AdminLayout = ({ children }) => {
 
   return (
     <Flex minH="100vh" bg="gray.100">
-      <Box w="250px" bg="gray.800" color="white" p={4}>
+      <Box w="250px" bg="gray.800" color="" p={4}>
         <Heading size="md" mb={4}>
           Admin Panel
         </Heading>
@@ -105,7 +105,7 @@ const AdminLayout = ({ children }) => {
           </Button>
         </Stack>
       </Box>
-      <Box flex="1" bg="white" boxShadow="lg">
+      <Box flex="1" boxShadow="lg">
         <Box p={4}>{activeMenuItem === "Languages" && <Languages />}</Box>
       </Box>
     </Flex>
