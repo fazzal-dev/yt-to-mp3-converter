@@ -10,36 +10,31 @@ import {
   Tbody,
   Td,
   useToast,
-  Container,
-  Box,
-  Flex,
-  HStack,
 } from "@chakra-ui/react";
-import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { db } from "../../firebase/config";
+import axios from "axios";
 
 const AdminLanguages = () => {
-  const toast = useToast();
   const [languages, setLanguages] = useState([]);
   const [localLanguages, setLocalLanguages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const languagesCollectionRef = collection(db, "languages");
+  const toast = useToast();
 
   const getLanguages = async () => {
-    const data = await getDocs(languagesCollectionRef);
-    const languagesData = data.docs.map((doc) => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
-    setLanguages(languagesData);
-    setLocalLanguages(languagesData);
+    try {
+      const response = await axios.get("http://162.55.212.83:5000/languages");
+      setLanguages(response.data);
+      setLocalLanguages(response.data);
+      console.log(languages);
+    } catch (error) {
+      console.error("Error fetching languages:", error);
+    }
   };
 
   const handleToggleEnabled = (id) => {
     setLocalLanguages((prevLanguages) =>
       prevLanguages.map((lang) =>
-        lang.id === id ? { ...lang, enabled: !lang.enabled } : lang
+        lang._id === id ? { ...lang, enabled: !lang.enabled } : lang
       )
     );
   };
@@ -47,7 +42,7 @@ const AdminLanguages = () => {
   const handleSetDefaultLanguage = (id) => {
     setLocalLanguages((prevLanguages) =>
       prevLanguages.map((lang) =>
-        lang.id === id
+        lang._id === id
           ? { ...lang, default: true }
           : { ...lang, default: false }
       )
@@ -58,8 +53,7 @@ const AdminLanguages = () => {
     setIsLoading(true);
     try {
       for (const lang of localLanguages) {
-        const languageDoc = doc(db, "languages", lang.id);
-        await updateDoc(languageDoc, {
+        await axios.put(`http://162.55.212.83:5000/languages/${lang._id}`, {
           enabled: lang.enabled,
           default: lang.default,
         });
@@ -109,9 +103,6 @@ const AdminLanguages = () => {
                 Enabled
               </Th>
               <Th fontWeight="bold" textAlign="center">
-                Default
-              </Th>
-              <Th fontWeight="bold" textAlign="center">
                 Actions
               </Th>
             </Tr>
@@ -119,20 +110,19 @@ const AdminLanguages = () => {
 
           <Tbody>
             {localLanguages.map((lang) => (
-              <Tr key={lang.id}>
+              <Tr key={lang._id}>
                 <Td>{lang.name}</Td>
                 <Td textAlign="center">
                   <Switch
                     isChecked={lang.enabled}
-                    onChange={() => handleToggleEnabled(lang.id)}
+                    onChange={() => handleToggleEnabled(lang._id)}
                     size="md"
                     colorScheme="blue"
                   />
                 </Td>
-                <Td textAlign="center">{lang.default ? "Yes" : "No"}</Td>
                 <Td textAlign="center">
                   <Button
-                    onClick={() => handleSetDefaultLanguage(lang.id)}
+                    onClick={() => handleSetDefaultLanguage(lang._id)}
                     color={lang.default ? "black" : "blue.600"}
                     variant={lang.default ? "solid" : "outline"}
                     colorScheme="blue"
@@ -141,6 +131,7 @@ const AdminLanguages = () => {
                     alignItems="center"
                     justifyContent="center"
                     height="32px"
+                    aria-required
                   >
                     {lang.default ? "Default" : "Set Default"}
                   </Button>
