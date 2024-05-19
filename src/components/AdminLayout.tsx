@@ -28,7 +28,8 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { RiAdvertisementLine } from "react-icons/ri";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Languages from "../pages/admin/Languages";
+import Languages from "../pages/admin/components/Languages";
+import Redirects from "../pages/admin/components/Redirects";
 
 const menuItems = [
   { label: "Languages", link: "/admin/languages", icon: <LuLanguages /> },
@@ -64,8 +65,8 @@ const AdminLayout = ({ children }) => {
   };
 
   return (
-    <Flex minH="100vh" bg="gray.100">
-      <Box w="250px" bg="gray.800" color="" p={4}>
+    <Flex minH="100vh" bg="gray.50">
+      <Box w="250px" bg="gray.800" p={4}>
         <Heading size="md" mb={4}>
           Admin Panel
         </Heading>
@@ -105,8 +106,9 @@ const AdminLayout = ({ children }) => {
           </Button>
         </Stack>
       </Box>
-      <Box flex="1" boxShadow="lg">
-        <Box p={4}>{activeMenuItem === "Languages" && <Languages />}</Box>
+      <Box flex="1" boxShadow="lg" p={4}>
+        {activeMenuItem === "Languages" && <Languages />}
+        {activeMenuItem === "Redirects" && <Redirects />}
       </Box>
     </Flex>
   );

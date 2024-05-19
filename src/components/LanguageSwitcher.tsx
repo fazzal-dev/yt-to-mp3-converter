@@ -13,7 +13,7 @@ const Languages = () => {
 
   useEffect(() => {
     const fetchLanguages = async () => {
-      const response = await axios.get("http://162.55.212.83:5000/languages");
+      const response = await axios.get("http://162.55.212.83:3001/languages");
 
       const enabledLanguages = response.data.filter((lang) => lang.enabled);
       setLanguages(enabledLanguages);

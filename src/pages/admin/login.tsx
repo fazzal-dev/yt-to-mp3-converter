@@ -1,4 +1,3 @@
-// pages/admin/login.js
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -11,7 +10,6 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
-import { auth } from "../../firebase/config";
 
 const Login = () => {
   const [email, setEmail] = useState("");

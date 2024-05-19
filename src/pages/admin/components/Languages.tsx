@@ -22,7 +22,7 @@ const AdminLanguages = () => {
 
   const getLanguages = async () => {
     try {
-      const response = await axios.get("http://162.55.212.83:5000/languages");
+      const response = await axios.get("http://162.55.212.83:3001/languages");
       setLanguages(response.data);
       setLocalLanguages(response.data);
       console.log(languages);
@@ -53,7 +53,7 @@ const AdminLanguages = () => {
     setIsLoading(true);
     try {
       for (const lang of localLanguages) {
-        await axios.put(`http://162.55.212.83:5000/languages/${lang._id}`, {
+        await axios.put(`http://162.55.212.83:3001/languages/${lang._id}`, {
           enabled: lang.enabled,
           default: lang.default,
         });
@@ -85,24 +85,34 @@ const AdminLanguages = () => {
 
   return (
     <>
-      <TableContainer p="10" bg="gray.50" borderRadius="md" boxShadow="md">
-        <Heading color="black" mb="6">
+      <TableContainer
+        p="10"
+        borderRadius="md"
+        boxShadow="md"
+        bg="gray.50"
+        mx="auto"
+        maxW="4xl"
+      >
+        <Heading color="gray.700" mb="6" textAlign="center">
           Languages
         </Heading>
         <Table
           shadow="md"
-          w="50vw"
+          w="full"
           size="lg"
           variant="simple"
-          style={{ color: "black", margin: "0 auto" }}
+          bg="white"
+          borderRadius="md"
         >
-          <Thead textAlign="center">
+          <Thead>
             <Tr>
-              <Th fontWeight="bold">Name</Th>
-              <Th fontWeight="bold" textAlign="center">
+              <Th fontWeight="bold" color="gray.600">
+                Name
+              </Th>
+              <Th fontWeight="bold" color="gray.600" textAlign="center">
                 Enabled
               </Th>
-              <Th fontWeight="bold" textAlign="center">
+              <Th fontWeight="bold" color="gray.600" textAlign="center">
                 Actions
               </Th>
             </Tr>
@@ -111,7 +121,7 @@ const AdminLanguages = () => {
           <Tbody>
             {localLanguages.map((lang) => (
               <Tr key={lang._id}>
-                <Td>{lang.name}</Td>
+                <Td color="gray.700">{lang.name}</Td>
                 <Td textAlign="center">
                   <Switch
                     isChecked={lang.enabled}
@@ -123,7 +133,7 @@ const AdminLanguages = () => {
                 <Td textAlign="center">
                   <Button
                     onClick={() => handleSetDefaultLanguage(lang._id)}
-                    color={lang.default ? "black" : "blue.600"}
+                    color={lang.default ? "white" : "blue.600"}
                     variant={lang.default ? "solid" : "outline"}
                     colorScheme="blue"
                     size="sm"
@@ -149,7 +159,7 @@ const AdminLanguages = () => {
           spinnerPlacement="start"
           color="white"
           mt="6"
-          ml="auto"
+          alignSelf="flex-end"
           mr="10"
         >
           Save Changes
