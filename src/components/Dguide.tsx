@@ -50,7 +50,10 @@ const DownloadGuide = () => {
     theme.semanticTokens.gradients.dark
   );
   const { t } = useTranslation("download_guide");
-  const steps = t("downloadGuide.steps", { returnObjects: true }) as Step[];
+  const steps = t("downloadGuide.steps", {
+    returnObjects: true,
+  }) as Step[];
+
   return (
     <Flex alignItems="center" direction="column">
       <Text

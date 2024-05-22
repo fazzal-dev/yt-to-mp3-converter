@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "next.config.mjs", "next-i18next.config.js"  ],
+, "next.config.mjs", "next-i18next.config.js", "src/utils/dbConnect.js", "src/pages/[path].js"  ],
   "exclude": [
     "node_modules"
   ]

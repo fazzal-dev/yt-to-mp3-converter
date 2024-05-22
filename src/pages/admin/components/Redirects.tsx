@@ -13,16 +13,14 @@ import { useState } from "react";
 const Redirects = () => {
   const [fromUrl, setFromUrl] = useState("");
   const [toUrl, setToUrl] = useState("");
-  const [path, setPath] = useState("");
   const [statusCode, setStatusCode] = useState("");
   const toast = useToast();
 
   const handleSaveRedirect = async () => {
     try {
-      await axios.post("http://162.55.212.83:3001/redirects", {
-        fromUrl,
+      await axios.post("/api/redirects", {
+        fromUrl: `/${fromUrl}`,
         toUrl,
-        path,
         statusCode: parseInt(statusCode),
       });
       toast({
@@ -75,15 +73,6 @@ const Redirects = () => {
           flex="1"
           mr={{ base: 0, md: 2 }}
           onChange={(e) => setFromUrl(e.target.value)}
-        />
-        <Input
-          placeholder="/path"
-          bg="white"
-          color="black"
-          _placeholder={{ color: "gray.500" }}
-          borderColor="gray.200"
-          flex="1"
-          onChange={(e) => setPath(e.target.value)}
         />
       </Flex>
       <Flex

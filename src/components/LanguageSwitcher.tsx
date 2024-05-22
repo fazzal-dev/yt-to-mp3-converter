@@ -13,14 +13,25 @@ const Languages = () => {
 
   useEffect(() => {
     const fetchLanguages = async () => {
-      const response = await axios.get("http://162.55.212.83:3001/languages");
+      try {
+        const response = await axios.get(
+          "http://162.55.212.83:3001/languages",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
-      const enabledLanguages = response.data.filter((lang) => lang.enabled);
-      setLanguages(enabledLanguages);
+        const enabledLanguages = response.data.filter((lang) => lang.enabled);
+        setLanguages(enabledLanguages);
 
-      const defaultLang = enabledLanguages.find((lang) => lang.default);
-      if (defaultLang && i18n.language !== defaultLang.code) {
-        router.push("/", "/", { locale: defaultLang.code });
+        const defaultLang = enabledLanguages.find((lang) => lang.default);
+        // if (defaultLang && i18n.language !== defaultLang.code) {
+        //   router.push("/", "/", { locale: defaultLang.code });
+        // }
+      } catch (error) {
+        console.error("Error fetching languages:", error);
       }
     };
 
