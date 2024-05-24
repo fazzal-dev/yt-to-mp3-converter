@@ -26,10 +26,29 @@ const Languages = () => {
         const enabledLanguages = response.data.filter((lang) => lang.enabled);
         setLanguages(enabledLanguages);
 
-        const defaultLang = enabledLanguages.find((lang) => lang.default);
-        // if (defaultLang && i18n.language !== defaultLang.code) {
-        //   router.push("/", "/", { locale: defaultLang.code });
-        // }
+        if (!localStorage.getItem("userLanguage")) {
+          const defaultLang = enabledLanguages.find((lang) => lang.default);
+
+          if (defaultLang) {
+            const defaultRedirectResponse = await axios.get(
+              `${window.location.origin}/api/default-redirect`
+            );
+
+            if (
+              defaultRedirectResponse.status === 200 &&
+              defaultRedirectResponse.data.defaultToUrl
+            ) {
+              router.push(
+                defaultRedirectResponse.data.defaultToUrl,
+                defaultRedirectResponse.data.defaultToUrl,
+                {
+                  locale: defaultLang.code,
+                }
+              );
+              localStorage.setItem("userLanguage", defaultLang.code);
+            }
+          }
+        }
       } catch (error) {
         console.error("Error fetching languages:", error);
       }
@@ -38,10 +57,32 @@ const Languages = () => {
     fetchLanguages();
   }, []);
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng).then(() => {
-      router.push(router.pathname, router.asPath, { locale: lng });
-    });
+  const changeLanguage = async (lng) => {
+    const currentPath = router.asPath.split("/").slice(2).join("/"); // Remove locale prefix
+    const apiUrl = `${window.location.origin}/api/redirect/${lng}${
+      currentPath ? `/${currentPath}` : ""
+    }`;
+
+    try {
+      const redirectResponse = await axios.get(apiUrl);
+      let newPath = `/${lng}`;
+
+      if (redirectResponse.status === 200 && redirectResponse.data.toUrl) {
+        newPath = redirectResponse.data.toUrl;
+      }
+
+      i18n.changeLanguage(lng).then(() => {
+        localStorage.setItem("userLanguage", lng);
+        router.push(newPath, newPath, { locale: lng });
+      });
+    } catch (error) {
+      console.error("Error fetching redirect path:", error);
+      i18n.changeLanguage(lng).then(() => {
+        localStorage.setItem("userLanguage", lng);
+        const newFullPath = `/${lng}${currentPath ? `/${currentPath}` : ""}`;
+        router.push(newFullPath, newFullPath, { locale: lng });
+      });
+    }
   };
 
   const selectedLanguage = languages.find(
